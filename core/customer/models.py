@@ -9,9 +9,10 @@ class Customer(StandardModel):
     """A customer represents a single user in the natic core. This model inherits from the
     natic template StandardModel"""
 
+    name = models.CharField(blank=True, null=True, max_length=255)
     first_name = models.CharField(blank=True, null=True, max_length=255)
     last_name = models.CharField(blank=True, null=True, max_length=255)
-    name = models.CharField(blank=True, null=True, max_length=255)
+    date_birth = models.DateField(blank=True, null=True)
 
     @property
     def full_name(self):
