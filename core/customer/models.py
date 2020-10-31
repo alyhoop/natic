@@ -15,7 +15,7 @@ class Customer(StandardModel):
 
     @property
     def full_name(self):
-        "Returns the person's full name."
+        "Returns the customers's full name."
         return "%s %s" % (self.first_name, self.last_name)
 
     def save(self, *args, **kwargs):
@@ -29,7 +29,7 @@ class Customer(StandardModel):
         super().save(*args, **kwargs)  # Call the "real" save() method.
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.name}"
 
     class Meta:
         db_table = "customer"
