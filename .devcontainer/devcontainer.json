@@ -1,23 +1,24 @@
 // Update the VARIANT arg in docker-compose.yml to pick a Python version: 3, 3.8, 3.7, 3.6 
 {
-	"name": "Python 3 & PostgreSQL",
+	"name": "natic dev container",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspace",
-
 	// Set *default* container specific settings.json values on container create.
-	"settings": { 
+	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash",
-		"sqltools.connections": [{
-			"name": "Container database",
-			"driver": "PostgreSQL",
-			"previewLimit": 50,
-			"server": "localhost",
-			"port": 5432,
-			"database": "postgres",
-			"username": "postgres",
-			"password": "postgres"
-		}],
+		"sqltools.connections": [
+			{
+				"name": "Container database",
+				"driver": "PostgreSQL",
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 5432,
+				"database": "postgres",
+				"username": "postgres",
+				"password": "postgres"
+			}
+		],
 		"python.pythonPath": "/usr/local/bin/python",
 		"python.linting.enabled": true,
 		"python.linting.pylintEnabled": true,
@@ -32,20 +33,32 @@
 		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
 		"python.testing.pytestPath": "/usr/local/py-utils/bin/pytest"
 	},
-
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"ms-python.python",
 		"mtxr.sqltools",
-		"mtxr.sqltools-driver-pg"
-	]
-
+		"mtxr.sqltools-driver-pg",
+		"dsznajder.es7-react-js-snippets",
+		"github.vscode-codeql",
+		"ms-azuretools.vscode-docker",
+		"dbaeumer.vscode-eslint",
+		"github.vscode-pull-request-github",
+		"ms-vsliveshare.vsliveshare-pack",
+		"bierner.markdown-mermaid",
+		"davidanson.vscode-markdownlint",
+		"esbenp.prettier-vscode",
+		"hbenl.vscode-test-explorer",
+		"ms-vscode-remote.remote-containers"
+	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [5000, 5432],
-
+	"forwardPorts": [
+		5000,
+		5432,
+		8000,
+		3000
+	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip install --user -r requirements.txt",
-
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
 }

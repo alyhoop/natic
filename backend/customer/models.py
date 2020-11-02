@@ -1,6 +1,6 @@
 import uuid
 from django.db import models
-from natic_templates.model_templates import StandardModel
+from core.model_templates import StandardModel
 
 
 # Create your models here.
@@ -11,6 +11,7 @@ class Customer(StandardModel):
 
     name = models.CharField(blank=True, null=True, max_length=255)
     first_name = models.CharField(blank=True, null=True, max_length=255)
+    # middle_name = models.CharField(blank=True, null=True, max_length=255)
     last_name = models.CharField(blank=True, null=True, max_length=255)
     date_birth = models.DateField(blank=True, null=True)
 
