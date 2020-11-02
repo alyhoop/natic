@@ -1,10 +1,8 @@
-version: '3'
+version: "3"
 
 services:
   app:
-    ports:
-     - 8000:8000
-     - 3000:3000
+    container_name: natic_web
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
@@ -21,6 +19,10 @@ services:
     volumes:
       - ..:/workspace:cached
 
+    stdin_open: true
+    depends_on:
+      - db
+
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
 
@@ -29,11 +31,11 @@ services:
 
     # Uncomment the next line to use a non-root user for all processes.
     # user: vscode
-
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
   db:
+    container_name: natic_db
     image: postgres:latest
     restart: unless-stopped
     volumes:
