@@ -48,16 +48,16 @@ Additional documents exist in [Confluence](https://natic.atlassian.net/wiki).
 ### Web Technologies
 - JS, HTML, CSS
 ### Front End Framework
-- React using React-Bootstrap
+- React using Material-UI
 ### Back End
 - Python, Django
+### Database
+- PostgreSQL
 ### Package Manager
 - yarn
 ### Container
 - Docker
 ### Version Control
 - GitHub, Git
-### Project Management 
+### Project Management
 - Confluence
-### Testing Framework 
-- tbd.
